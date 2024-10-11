@@ -8,5 +8,6 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommandArguments> --scanpci --advanced --cfg</LocalDebuggerCommandArguments>
   </PropertyGroup>
 </Project>

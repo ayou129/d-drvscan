@@ -6,6 +6,10 @@
 #pragma warning (disable: 4996)
 #include "ia32.hpp"
 
+#include <windows.h>
+#include <iostream>
+#define LOG_RED(msg) wprintf(L"\033[1;31m%s\033[0m\n", msg)
+
 QWORD cl::ntoskrnl_base;
 
 std::vector<QWORD> cl::global_export_list;
@@ -24,8 +28,8 @@ NTOSKRNL_EXPORT(KeQueryPrcbAddress);
 static void unsupported_error(void)
 {
 	LOG_RED(
-		"Usermode connector is not supported,\n"
-		"please launch driver or change your target action\n"
+		"Usermode connector is not supported(不支持用户模式连接器),\n"
+		"Please launch driver or change your target action(请启动驱动程序或更改目标操作)\n"
 	);
 }
 
